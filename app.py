@@ -191,12 +191,16 @@ from sklearn.naive_bayes import MultinomialNB
 import joblib
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+import os
+import nltk
 
+nltk_data_path = "/home/appuser/nltk_data"
+os.makedirs(nltk_data_path, exist_ok=True)
 
-# Setup
-nltk.download('wordnet')
-nltk.download('omw-1.4')
-nltk.download('stopwords')
+nltk.download('wordnet', download_dir=nltk_data_path)
+nltk.download('omw-1.4', download_dir=nltk_data_path)
+nltk.download('stopwords', download_dir=nltk_data_path)
+
 
 # Preprocessing setup
 lemmatizer = WordNetLemmatizer()
